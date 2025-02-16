@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mitr:wght@200;300;400;500;600;700&family=Montserrat:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    height: auto;
+}
+
+/* a {
+    margin-bottom: 30px;
+} */
+
+.back-button {
+    text-decoration: none;
+    color: #000;
+}
+
+.user-container {
+    margin-top: 20px;
+    padding: 22px;
+    background-color: rgb(247, 247, 247);
+    border-radius: 10px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.head-info {
+    font-weight:500;
+    font-size: medium;
+}
+
+.p-info {
+    font-size: small;
+    margin-bottom: 10px;
+    color: rgb(100, 100, 100)
+}
+
+.head-info-tail {
+    font-weight: 500;
+    font-size: medium;
+    margin-top: 10px;
+}
+
+.p-info-tail {
+    margin-bottom: 0;
+    font-size: small;
+    color: rgb(100, 100, 100)
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.view-posts-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #409cff;
+    color: #fff;
+    border: none;
+}
+
+.view-posts-btn:hover {
+    background-color: #0076ff;
+}
