@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const userDetail = document.getElementById("user-detail");
-    const viewPostBtn = document.getElementById("view-post-btn");
+    const viewPostBtn = document.getElementById("view-posts");
 
     // ดึง ID จาก URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // เมื่อคลิกที่ปุ่ม "ดูโพสต์"
     viewPostBtn.addEventListener("click", () => {
-        window.location.href = `./user-posts.html?userId=${userId}`;
+        const userId = user.id;
+        window.location.href = `/user-posts/index.html?userId=${userId}`;
     });
 });
