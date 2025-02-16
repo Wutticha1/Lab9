@@ -20,7 +20,7 @@ const fetchUser = async () => {
 const displayUser = (users) => {
     userList.innerHTML = users.map(user => `
         <div class = "user-item">
-            <a href = "user-detail.html?id=${user.id}">
+            <a href = "/user-info/index.html?id=${user.id}">
                 <span class="user-name">${user.name}</span> <br>
                 <span class="user-email">${user.email}</span>
             </a>
