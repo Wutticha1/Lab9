@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <div class = "card-item">
                     <h2>${post.title}<h2>
                     <p>${post.body}</p>
-                    <a href="user-comments/index.html?postId=${post.id}&userId=${userId}">ดูความคิดเห็น</a>
+                    <a href="user-comments/index.html?postId=${post.id}&userId=${userId}" id="comment">ดูความคิดเห็น</a>
                 </div>
             `).join("");
         } else {
