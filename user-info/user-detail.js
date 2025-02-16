@@ -11,13 +11,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    try {
-        // ดึงข้อมูลผู้ใช้จาก API
-        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
-        const user = await response.json();
+    // ดึงข้อมูลผู้ใช้จาก API
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
 
-        // แสดงชื่อผู้ใช้
-        userDetail.innerHTML = `
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const user = await response.json();
+    // แสดงชื่อผู้ใช้
+    userDetail.innerHTML = `
+        <div class = "user-container">
             <h2>${user.name}</h2>
             <div class="head-info">อีเมล</div>
             <div class="p-info">${user.email}</div>
@@ -31,23 +35,20 @@ document.addEventListener("DOMContentLoaded", async () => {
             <div class="head-info">เว็บไซต์</div>
             <div class="p-info">${user.website}</div>
 
-            <div class="head-info">ที่อยู่</div>
-            <p class="info">${user.address.street}</p>, 
-            <p class="info">${user.address.suite}</p><br> 
-            <p class="info">${user.address.city}</p>,
-            <p class="info">${user.address.zipcode}</p>
+            <span class="head-info">ที่อยู่</span><br>
+            <span class="p-info">${user.address.street}</span>, 
+            <span class="p-info">${user.address.suite}</span><br> 
+            <span class="p-info">${user.address.city}</span>,
+            <span class="p-info">${user.address.zipcode}</span>
 
-            <div class="head-info">บริษัท</div>
-            <div class="p-info">${user.company.name}</div>
+            <div class="head-info-tail">บริษัท</div>
+            <div class="p-info-tail">${user.company.name}</div>
             <div class="p-info">${user.company.catchPhrase}</div>
-        `;
+        </div>
+    `;
 
-        // เมื่อคลิกที่ปุ่ม "ดูโพสต์"
-        viewPostBtn.addEventListener("click", () => {
-            window.location.href = `./user-posts.html?userId=${userId}`;
-        })
-        
-    } catch (error) {
-        userDetail.innerHTML = '<p>เกิดข้อผิดพลาดในการโหลดข้อมูลผู้ใช้</p>';
-    }
+    // เมื่อคลิกที่ปุ่ม "ดูโพสต์"
+    viewPostBtn.addEventListener("click", () => {
+        window.location.href = `./user-posts.html?userId=${userId}`;
+    });
 });
